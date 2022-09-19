@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+//Component
+import {Sidebar , Navbar , MenuSetting} from "./components";
+//Redux
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import {useSelector} from "react-redux";
+
+
+const App = () => {
+
+    const isMenuActive = useSelector(state => state.menuState.isMenuActive);
+
+
+    return (
+        <div className="flex min-h-screen bg-[#121212]">
+            <Sidebar />
+            <div className={isMenuActive ? "lg:w-[calc(100%-18rem)] w-full" : "w-full"}>
+                <Navbar />
+            </div>
+            <MenuSetting />
+        </div>
+    );
+};
 
 export default App;

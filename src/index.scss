@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;800&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+.sidebar{
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+.search-input{
+  all: unset;
+  background-color: transparent;
+  padding: 0.3rem 0.5rem;
+  color: #fff;
+  margin-left: 0.3rem;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
