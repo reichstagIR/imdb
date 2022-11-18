@@ -25,6 +25,7 @@ const TopMovies = () => {
     const moviesContainer = useRef();
 
     useEffect(() => {
+        setPageNumber(1);
         if(top === "popular" || top === "top_rated" || top === "upcoming"){
 
             setLoading(true);
@@ -109,7 +110,6 @@ const TopMovies = () => {
     const scrollHandler = (event) => {
         if((event.target.scrollTop + event.target.offsetHeight) === event.target.scrollHeight && pageNumber <= 500){
             setPageNumber(prevState => prevState + 1);
-            alert(pageNumber)
         }
     }
 

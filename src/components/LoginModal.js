@@ -46,7 +46,7 @@ const LoginModal = () => {
 
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events
-        <div onClick={closeModal} className={`${accountState.isModalActive ? "" : "modal-wrapper-close"} modal fixed flex items-start justify-center inset-0 z-50 bg-[rgba(0,0,0,0.6)]`}>
+        <div onClick={closeModal} className={`${accountState.isModalActive ? "" : "modal-wrapper-close"} modal fixed flex items-start px-4 lg:px-0 justify-center inset-0 z-50 bg-[rgba(0,0,0,0.6)]`}>
             <div  className="modal-content-close relative w-full max-w-md py-16 px-16 z-50 rounded-md top-[15%] opacity-100 duration-500" style={{background: "linear-gradient(180deg, rgba(35,41,44,1) 0%, rgba(8,22,26,1) 100%)"}}>
                 <div className="flex mb-7 items-center justify-between">
                     <img src={tmdb} alt="logo-tmdb" className="w-44"/>

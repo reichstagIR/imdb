@@ -92,7 +92,7 @@ const MovieDetails = () => {
                 error ? <div className="h-full flex items-center justify-center text-2xl text-white font-semibold"><p>{error}</p></div> : (
                     <>
                         <div className="row">
-                            <div className="col-xl-4 col-lg-12 flex lg:justify-start">
+                            <div className="col-xl-4 col-lg-12 flex justify-center lg:justify-start">
                                 <div className="max-w-[24rem] shadow-gray-400">
                                     <img src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movieDetails?.poster_path}`} alt="poster-path" className="w-full rounded-2xl"/>
                                 </div>
