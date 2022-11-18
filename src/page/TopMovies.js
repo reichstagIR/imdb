@@ -108,11 +108,9 @@ const TopMovies = () => {
 
     const scrollHandler = (event) => {
         if((event.target.scrollTop + event.target.offsetHeight) === event.target.scrollHeight && pageNumber <= 500){
-            console.log("hg")
             setPageNumber(prevState => prevState + 1);
+            alert(pageNumber)
         }
-        console.log(pageNumber)
-        console.log(event.target.scrollTop + event.target.offsetHeight,event.target.scrollHeight)
     }
 
 
