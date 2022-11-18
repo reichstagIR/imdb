@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="bg-[#272727] py-6 px-10 flex items-center justify-between">
             <div>
                 {accountState.isLogin ? (
-                    <div className="w-10 relative">
+                    <div className="w-10 relative mr-4">
                         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
                         <img src={`https://www.gravatar.com/avatar/${accountState?.accountDetails?.avatar?.gravatar?.hash}`} className="rounded-full w-full" alt="profile-img" onClick={openDropDownHandler}/>
                         <div className={`absolute -left-5 -right-5 z-40 rounded-lg mt-2 bg-[#121212] border-white border-[1px] ${isMenuOpen ? "visible" : "invisible"} flex flex-column items-center`}>
@@ -68,7 +68,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 ) : (
-                    <button type="login" className="text-white bg-[#D91921] px-3 py-[5px] rounded-lg" onClick={() => dispatch(toggleModal())}>Login</button>
+                    <button type="login" className="text-white bg-[#D91921] px-3 py-[5px] rounded-lg mr-4" onClick={() => dispatch(toggleModal())}>Login</button>
                 )}
             </div>
             <div className="inline-block border-b-[1px] border-white">

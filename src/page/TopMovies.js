@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect , useRef} from 'react';
 //Components
 import {FirstMovie , MovieCard} from "../components";
 //Utilities
@@ -8,6 +8,7 @@ import {useSearchParams} from "react-router-dom";
 import {v4} from "uuid";
 //Styles
 import "bootstrap/dist/css/bootstrap-grid.min.css";
+import movieDetails from "./MovieDetails";
 
 const TopMovies = () => {
 
@@ -20,6 +21,8 @@ const TopMovies = () => {
 
     const top = searchParams.get("top") || "popular";
     const id = searchParams.get("id") || "0";
+
+    const moviesContainer = useRef();
 
     useEffect(() => {
         if(top === "popular" || top === "top_rated" || top === "upcoming"){
@@ -104,14 +107,17 @@ const TopMovies = () => {
 
 
     const scrollHandler = (event) => {
-        if(event.target.scrollTop === event.target.scrollHeight - 801 && pageNumber <= 500){
+        if((event.target.scrollTop + event.target.offsetHeight) === event.target.scrollHeight && pageNumber <= 500){
+            console.log("hg")
             setPageNumber(prevState => prevState + 1);
         }
+        console.log(pageNumber)
+        console.log(event.target.scrollTop + event.target.offsetHeight,event.target.scrollHeight)
     }
 
 
     return (
-        <div className="h-full overflow-auto scroll-hidden" onScroll={(event) => scrollHandler(event)}>
+        <div className="h-full overflow-auto scroll-hidden" onScroll={(event) => scrollHandler(event)} ref={moviesContainer}>
             {loading ? <div className="h-full flex items-center justify-center"><div className="loader"></div></div> : (
                 error ? <div className="h-full flex items-center justify-center text-2xl text-white font-semibold"><p>{error}</p></div> : (
                     <>
@@ -124,7 +130,7 @@ const TopMovies = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className="flex items-center justify-center">
+                            <div className="flex items-center justify-center p-4">
                                 {pageNumber <= 500 ? <div className="loader"></div> : null}
                             </div>
                         </div>
