@@ -6,16 +6,6 @@ A site similar to the IMDB site with the TMDB API. Viewing the best movies in di
 
 
 
-## Screenshots
-
-![App Screenshot](https://i.imgur.com/5BFGHpc.png)
-
-
-## Demo
-
-https://imdb-clone-projects.netlify.app/
-
-
 ## Run Locally
 
 Clone the project
