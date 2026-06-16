@@ -19,4 +19,4 @@ root.render(
     </BrowserRouter>
 );
 
-serviceWorkerRegistration.unregister();
+serviceWorkerRegistration.register();
